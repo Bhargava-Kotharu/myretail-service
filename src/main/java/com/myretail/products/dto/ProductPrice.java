@@ -26,4 +26,9 @@ public class ProductPrice {
 		this.currencyCode = currencyCode;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductPrice [value=" + value + ", currencyCode=" + currencyCode + "]";
+	}
+
 }

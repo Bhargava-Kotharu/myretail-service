@@ -10,12 +10,18 @@ spring:
     show-sql: true
   datasource:
     platform: mysql
-    url: jdbc:mysql://localhost:3306/myretailservice
+    url: jdbc:mysql://localhost:3306/products
     username: root
-    password: root
-    driverClassName: org.postgresql.Driver
+    password: root@1234
+    driverClassName: com.mysql.jdbc.Driver
+    dbcp2:
+      validation-query: Select 1
+      test-while-idle: true
   data:
     mongodb:
-      uri: null
-      username: null
-      password: null
+      host: localhost
+      port: 27017
+      database: products
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG

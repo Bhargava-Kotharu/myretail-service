@@ -2,7 +2,6 @@ package com.myretail.products.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;

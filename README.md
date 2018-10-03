@@ -21,6 +21,18 @@ Following software is required to run the application.
 - Mongo DB
 - Swagger
 
+## Application Setup Instructions ##
+
+### Database setup ###
+
+- Create MySQL 'products' schema - To do this use src/main/resources/schema.sql
+- Create Mongo 'products' schema and then create 'product_details' collection and import {"_id":{"$oid":"5bb112e7a611436c614fa1ab"},"product_id":1,"description":"Apple is delicious"}
+
+### Application Setup ###
+
+- Use any IDE (STS, Eclipse or IntelliJ) and import the source directory
+- Execute goal 'mvn clean install' or right click and run as springboot app.
+
 ## Execution Instructions ##
 
 Application can be executed in two ways
@@ -34,7 +46,7 @@ Application can be executed in two ways
 	
 ## Instructions to access the API #
 
-Application is started at context path /  and port 8080 and following APIs are exposed.
+Application is started at context path /  and port 8080 and following APIs are exposed. All the APIs are secured using Basic Authentication(username, password). Please use the combination 'user/password' as username/password.
 
 ### GET Products API ###
 
@@ -42,7 +54,7 @@ Application is started at context path /  and port 8080 and following APIs are e
 	-Request Method             : GET
 	-Successful Response Code   : 200
 	-Successful Response Format : {"id":13860428,"current_price":{"value": 13.49,"currency_code":"USD", "product_desc":"Shirt"}}
-	-Error Response Code        : 404 (Not Found)
+	-Error Response Code        : 401 (Unauthorized) & 404 (Not Found)
 
 ### PUT Products API ###
 
@@ -50,13 +62,13 @@ Application is started at context path /  and port 8080 and following APIs are e
 	-Request Method             : PUT
 	-Successful Response Code   : 204
 	-Successful Response Format : No Content
-	-Error Response Code        : 404 (Not Found)
+	-Error Response Code        : 401 (Unauthorized) & 404 (Not Found)
 
 ## API Documentation ##
 
 Swagger has been used to generate API docs.
 
-Link: http://localhost:8080/api/swagger-ui.html
+    -Link: http://localhost:8080/swagger-ui.html
 
 
 

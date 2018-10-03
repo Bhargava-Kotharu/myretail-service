@@ -46,7 +46,7 @@ public class ProductsController {
 	 * @throws NotFoundException
 	 */
 	@PutMapping("/{id}")
-	public ResponseEntity<?> updateProductPrice(@RequestBody Product product) throws NotFoundException {
+	public ResponseEntity<?> updateProduct(@RequestBody Product product) throws NotFoundException {
 		productService.updateProduct(product);
 		return ResponseEntity.noContent().build();
 	}
